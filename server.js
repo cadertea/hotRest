@@ -19,13 +19,16 @@ app.get("/tables", function(req, res) {
 app.get("/api/reserve", function(req, res) {
      res.json(reservations);
 });
+app.get("/api/tables", function(req, res) {
+    res.json(reservations);
+});
 // Create New Characters
 app.post("/api/reserve", function(req, res) {
     var newReservation = req.body;
     // newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
     console.log(newReservation);
     reservations.push(newReservation);
-    res.json(newReservation);
+    res.json(true);
 });
 app.listen(PORT, function() {
     console.log("App listening on port " + PORT);
